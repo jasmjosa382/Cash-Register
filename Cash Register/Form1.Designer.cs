@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.titleLabel = new System.Windows.Forms.Label();
             this.coffeeLabel = new System.Windows.Forms.Label();
             this.pasteryLabel = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.tenderedOutput = new System.Windows.Forms.TextBox();
             this.receiptButton = new System.Windows.Forms.Button();
             this.receiptOutput = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -62,7 +64,7 @@
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(991, 57);
             this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Moonshine Cafe";
+            this.titleLabel.Text = "☾✨ Moonshine Cafe ✨☽";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // coffeeLabel
@@ -136,7 +138,7 @@
             this.totalButton.Name = "totalButton";
             this.totalButton.Size = new System.Drawing.Size(235, 43);
             this.totalButton.TabIndex = 7;
-            this.totalButton.Text = "Calculate Total";
+            this.totalButton.Text = "☪ Calculate Total ☪";
             this.totalButton.UseVisualStyleBackColor = false;
             this.totalButton.Click += new System.EventHandler(this.totalButton_Click);
             // 
@@ -204,13 +206,13 @@
             // separationLabel
             // 
             this.separationLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.separationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.separationLabel.ForeColor = System.Drawing.Color.White;
             this.separationLabel.Location = new System.Drawing.Point(1, 398);
             this.separationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.separationLabel.Name = "separationLabel";
-            this.separationLabel.Size = new System.Drawing.Size(404, 16);
+            this.separationLabel.Size = new System.Drawing.Size(411, 16);
             this.separationLabel.TabIndex = 14;
-            this.separationLabel.Text = "hello";
+            this.separationLabel.Text = "☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽☾✨☽";
             // 
             // tenderedLabel
             // 
@@ -235,6 +237,7 @@
             // tenderedButton
             // 
             this.tenderedButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tenderedButton.Enabled = false;
             this.tenderedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.tenderedButton.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenderedButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -243,7 +246,7 @@
             this.tenderedButton.Name = "tenderedButton";
             this.tenderedButton.Size = new System.Drawing.Size(221, 34);
             this.tenderedButton.TabIndex = 17;
-            this.tenderedButton.Text = "Calculate Change";
+            this.tenderedButton.Text = "☪ Calculate Change ☪";
             this.tenderedButton.UseVisualStyleBackColor = false;
             this.tenderedButton.Click += new System.EventHandler(this.tenderedButton_Click);
             // 
@@ -270,6 +273,7 @@
             // receiptButton
             // 
             this.receiptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.receiptButton.Enabled = false;
             this.receiptButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.receiptButton.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -278,7 +282,7 @@
             this.receiptButton.Name = "receiptButton";
             this.receiptButton.Size = new System.Drawing.Size(400, 34);
             this.receiptButton.TabIndex = 20;
-            this.receiptButton.Text = "Print Receipt";
+            this.receiptButton.Text = "☪ Print Receipt ☪";
             this.receiptButton.UseVisualStyleBackColor = false;
             this.receiptButton.Click += new System.EventHandler(this.receiptButton_Click);
             // 
@@ -292,12 +296,29 @@
             this.receiptOutput.Size = new System.Drawing.Size(333, 475);
             this.receiptOutput.TabIndex = 21;
             // 
+            // resetButton
+            // 
+            this.resetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.resetButton.Enabled = false;
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.resetButton.Font = new System.Drawing.Font("Kristen ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resetButton.Location = new System.Drawing.Point(538, 604);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(235, 43);
+            this.resetButton.TabIndex = 22;
+            this.resetButton.Text = "☪ New Order ☪";
+            this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(893, 670);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.receiptOutput);
             this.Controls.Add(this.receiptButton);
             this.Controls.Add(this.tenderedOutput);
@@ -321,6 +342,7 @@
             this.Controls.Add(this.coffeeLabel);
             this.Controls.Add(this.titleLabel);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Cash Register";
@@ -354,6 +376,7 @@
         private System.Windows.Forms.TextBox tenderedOutput;
         private System.Windows.Forms.Button receiptButton;
         private System.Windows.Forms.Label receiptOutput;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 

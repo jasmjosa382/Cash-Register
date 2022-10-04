@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading; 
+using System.Threading;
+using System.Media;
 
 namespace Cash_Register
 {
@@ -55,6 +56,8 @@ namespace Cash_Register
                 taxOutput.Text = $"{taxAmount.ToString("C")}";
                 totalOutput.Text = $"{totalPrice.ToString("C")}";
 
+                tenderedButton.Enabled = true;
+
             }
             catch
             {
@@ -64,6 +67,7 @@ namespace Cash_Register
                 taxOutput.ForeColor = Color.Red;
                 totalOutput.Text = "Input Error";
                 totalOutput.ForeColor = Color.Red;
+
             }
 
             }
@@ -76,59 +80,81 @@ namespace Cash_Register
 
            tenderedOutput.Text = $"{changeRequired.ToString("C")}";
 
-
+            receiptButton.Enabled = true;
         }
 
         private void receiptButton_Click(object sender, EventArgs e)
         {
-            String cafeName = "Moonshine Cafe";
+            SoundPlayer receiptPrinterPlayer = new SoundPlayer(Properties.Resources.receiptPrinter);
+            receiptPrinterPlayer.Play();
+
+            String cafeName = "      ☾✨ Moonshine Cafe ✨☽";
             receiptOutput.Text = cafeName;
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
-            receiptOutput.Text += $"\n\n\nOrder Number 1076";
+            receiptOutput.Text += $"\n\n\n        Order Number 1076";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
-            receiptOutput.Text += $"\nSeptember 30, 2022";
+            receiptOutput.Text += $"\n         October 4, 2022";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
-            receiptOutput.Text += $"\n\n\n    Drinks x{numOfDrinks} @ ${drinkPrice}";
+            receiptOutput.Text += $"\n\n\nDrinks     x{numOfDrinks} @ ${drinkPrice}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
            
-            receiptOutput.Text += $"\n Pasteries x{numOfPasteries} @ ${pasteryPrice}";
+            receiptOutput.Text += $"\nPasteries  x{numOfPasteries} @ ${pasteryPrice}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\nSandwiches x{numOfSandwiches} @ ${sandwichPrice}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\n\n\nSubtotal        {subtotal.ToString("$.00")}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\nTax             {taxAmount.ToString("$.00")}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\nTotal           {totalPrice.ToString("$.00")}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\n\n\nTendered        {tenderedAmount.ToString("$.00")}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
             receiptOutput.Text += $"\nChange          {changeRequired.ToString("$.00")}";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
 
-            receiptOutput.Text += $"\n\n\nThank You For Eating With Us Today! Have A Nice Day! :)";
+            receiptOutput.Text += $"\n\n\nHave A Nice Day! :)";
             Refresh();
-            Thread.Sleep(700);
+            Thread.Sleep(500);
+
+            resetButton.Enabled = true;
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            drinkInput.Text = "";
+            pasteryInput.Text = "";
+            sandwichInput.Text = "";
+            tenderedInput.Text = "";
+
+            subtotalOutput.Text = "";
+            taxOutput.Text = "";
+            totalOutput.Text = "";
+            tenderedOutput.Text = "";
+
+            tenderedButton.Enabled = false;
+            receiptButton.Enabled = false;
+            resetButton.Enabled = false;
         }
     }
 }
