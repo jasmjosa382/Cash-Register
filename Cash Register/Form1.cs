@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 
+//Jasmine Josan
+//October 2022
+//Cafe Cash Register
+
 namespace Cash_Register
 {
     public partial class Form1 : Form
@@ -74,13 +78,21 @@ namespace Cash_Register
 
         private void tenderedButton_Click(object sender, EventArgs e)
         {
-            tenderedAmount = Convert.ToDouble(tenderedInput.Text);
+            try
+            {
+                tenderedAmount = Convert.ToDouble(tenderedInput.Text);
 
-            changeRequired = tenderedAmount - totalPrice;
+                changeRequired = tenderedAmount - totalPrice;
 
-           tenderedOutput.Text = $"{changeRequired.ToString("C")}";
+                tenderedOutput.Text = $"{changeRequired.ToString("C")}";
 
-            receiptButton.Enabled = true;
+                receiptButton.Enabled = true;
+            }
+            catch
+            {
+                tenderedInput.ForeColor = Color.Red;
+                tenderedInput.Text = "Input Error";
+            }
         }
 
         private void receiptButton_Click(object sender, EventArgs e)
@@ -155,6 +167,18 @@ namespace Cash_Register
             tenderedButton.Enabled = false;
             receiptButton.Enabled = false;
             resetButton.Enabled = false;
+
+            receiptOutput.Text = "";
+
+            numOfDrinks = 0;
+            numOfPasteries = 0;
+            numOfSandwiches = 0;
+            subtotal = 0;
+            taxAmount = 0;
+            totalPrice = 0;
+            tenderedAmount = 0;
+            changeRequired = 0;
+            
         }
     }
 }
