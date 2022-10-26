@@ -109,7 +109,7 @@ namespace Cash_Register
             Refresh();
             Thread.Sleep(500);
 
-            receiptOutput.Text += $"\n         October 4, 2022";
+            receiptOutput.Text += $"\n         October 26, 2022";
             Refresh();
             Thread.Sleep(500);
 
